@@ -1,7 +1,7 @@
 # CHANGELOG
 
-## [0.1.0] - 2024-05-13
+## [1.0.0] - 2024-06-013
 
-### Added to 0.1.0
+### Added to 1.0.0
 
 - Initial release

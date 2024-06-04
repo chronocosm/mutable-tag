@@ -1,0 +1,21 @@
+name: mutable-tag.yaml
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Make mutable tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Make mutable tag
+        env:
+          GITHUB_AUTHENTICATION_TOKEN: ${{ secrets.CHRONOCOSM_GITHUB_ACCESS_TOKEN }}
+        uses: chronocosm/mutable-tag@main
