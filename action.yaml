@@ -1,0 +1,14 @@
+name: "Create vM-style tag for a M.m.P tag"
+description: "Create a tag in the form v<Major-Version>."
+author: support@chronocosm.com
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run Action
+      run: ${{ github.action_path }}/action.sh
+      shell: bash
+
+branding:
+  icon: "tag"
+  color: "green"
