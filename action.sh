@@ -24,7 +24,7 @@ export MAJOR_VERSION=$(echo ${GITHUB_REF_NAME} | cut -d. -f1)
 export MAJOR_V_VERSION="v${MAJOR_VERSION}"
 export GIT_SHA=$(git rev-list -n 1 ${GIT_TAG})
 git ls-remote --tags
-git tag -d ${MAJOR_V_VERSION}
-git push origin :refs/tags/${MAJOR_V_VERSION}
+git tag -d ${MAJOR_V_VERSION} || true
+git push origin :refs/tags/${MAJOR_V_VERSION} || true
 git tag -a "${MAJOR_V_VERSION}" -m "Updating mutable tag version ${MAJOR_V_VERSION}" ${GIT_SHA}
 git push origin tag ${MAJOR_V_VERSION}
