@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Make mutable tag
         env:
           GITHUB_AUTHENTICATION_TOKEN: ${{ secrets.CHRONOCOSM_GITHUB_ACCESS_TOKEN }}
